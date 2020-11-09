@@ -2,6 +2,7 @@
 
 namespace App\Services;
 
+use App\Models\Report;
 use Illuminate\Support\Facades\DB;
 
 class ReportsService
@@ -10,9 +11,31 @@ class ReportsService
     {
         return \App\Models\Report::all();
     }
+
     public function get(int $id)
     {
         return \App\Models\Report::where('id', $id)->first();
+    }
+
+    public function add($request)
+    {
+        $name = $request->input('name') ?? '';
+
+        $report = new Report();
+        $report->name = $name;
+        $report->user_id = 1;
+
+        $report->save();
+    }
+
+    public function edit($request, $id)
+    {
+        $report = Report::find($id);
+        $name = $request->input('name') ?? '';
+        $report->name = $name;
+        $report->user_id = 1;
+
+        $report->save();
     }
 
     /**

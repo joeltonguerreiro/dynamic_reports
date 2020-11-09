@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Services\ReportsService;
+use Illuminate\Http\Request;
 
 class ReportsController extends Controller
 {
@@ -17,7 +18,33 @@ class ReportsController extends Controller
     {
         $responseData = $this->reportsService->listAll();
 
-        return response($responseData);
+        return view('reports.index', ['reports' => $responseData]);
+    }
+
+    public function add(Request $request)
+    {
+        if ($request->isMethod('post')) {
+            $this->reportsService->add($request);
+            return redirect('/reports');
+        }
+
+        if ($request->isMethod('get')) {
+            return view('reports.add');
+        }
+    }
+
+    public function edit(Request $request, $id)
+    {
+        if ($request->isMethod('post')) {
+            $this->reportsService->edit($request, $id);
+            return redirect('/reports');
+        }
+
+        if ($request->isMethod('get')) {
+            $report = $this->reportsService->get($id);
+
+            return view('reports.edit', ['report' => $report]);
+        }
     }
 
     public function show($id)
@@ -25,9 +52,9 @@ class ReportsController extends Controller
         $responseData = $this->reportsService->buildReport($id);
 
         // on this way, the return is a json
-        return response($responseData);
+        // return response($responseData);
 
         // on this way, the return is a variable to the view
-        // return view('reports.show', ['responseData' => $responseData]);
+        return view('reports.show', ['responseData' => $responseData]);
     }
 }

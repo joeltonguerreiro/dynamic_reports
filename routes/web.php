@@ -16,6 +16,14 @@ $router->get('/', function () use ($router) {
 });
 
 $router->get('/reports', 'ReportsController@index');
-$router->get('/reports/{id}', 'ReportsController@show');
+$router->get('/reports/add', 'ReportsController@add');
+$router->post('/reports/add', 'ReportsController@add');
+$router->get('/reports/edit/{id}', 'ReportsController@edit');
+$router->post('/reports/edit/{id}', 'ReportsController@edit');
+$router->get('/reports/show/{id}', 'ReportsController@show');
 
 $router->get('/websites', 'WebsitesController@index');
+$router->get('/websites/add', 'WebsitesController@add');
+$router->post('/websites/add', 'WebsitesController@add');
+$router->get('/websites/edit/{id}', 'WebsitesController@edit');
+$router->post('/websites/edit{id}', 'WebsitesController@edit');
