@@ -7,7 +7,7 @@
             <a href="/reports" class="nav-link">Reports</a>
         </li>
         <li class="nav-item">
-            <a href="/metas" class="nav-link">Meta-Information</a>
+            <a href="/meta-information" class="nav-link">Meta-Information</a>
         </li>
     </ul>
 </div>
