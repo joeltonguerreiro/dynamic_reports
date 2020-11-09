@@ -17,3 +17,5 @@ $router->get('/', function () use ($router) {
 
 $router->get('/reports', 'ReportsController@index');
 $router->get('/reports/{id}', 'ReportsController@show');
+
+$router->get('/websites', 'WebsitesController@index');
