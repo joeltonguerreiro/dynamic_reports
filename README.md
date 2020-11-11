@@ -1,3 +1,12 @@
+# Dynamic Reports
+
+## work in progress
+
+app running in https://still-wave-15421.herokuapp.com
+
+to view the report result, go to https://still-wave-15421.herokuapp.com/reports and click on "show"
+
+
 # Lumen PHP Framework
 
 [![Build Status](https://travis-ci.org/laravel/lumen-framework.svg)](https://travis-ci.org/laravel/lumen-framework)
