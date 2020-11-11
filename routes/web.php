@@ -30,6 +30,6 @@ $router->get('/websites', 'WebsitesController@index');
 $router->get('/websites/add', 'WebsitesController@add');
 $router->post('/websites/add', 'WebsitesController@add');
 $router->get('/websites/edit/{id}', 'WebsitesController@edit');
-$router->post('/websites/edit{id}', 'WebsitesController@edit');
+$router->post('/websites/edit/{id}', 'WebsitesController@edit');
 
 $router->get('/meta-information', 'MetasController@index');
