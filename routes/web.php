@@ -11,8 +11,12 @@
 |
 */
 
+// $router->get('/', function () use ($router) {
+//     return $router->app->version();
+// });
+
 $router->get('/', function () use ($router) {
-    return $router->app->version();
+    return view('index');
 });
 
 $router->get('/reports', 'ReportsController@index');
