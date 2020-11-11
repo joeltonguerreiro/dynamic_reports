@@ -4,7 +4,7 @@
 
 app running in https://still-wave-15421.herokuapp.com
 
-to view the report result, go to reports and click on "show"
+to view the report result, go to https://still-wave-15421.herokuapp.com/reports and click on "show"
 
 
 # Lumen PHP Framework
